@@ -1,0 +1,24 @@
+# הרצה מקומית של השרת יחד עם Postgres:
+#   docker compose up -d --build
+# ב-Railway כל service כאן הופך לשירות נפרד.
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/tasksdb
+    depends_on:
+      - db
+
+  db:
+    image: postgres:17-alpine
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=tasksdb
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+
+volumes:
+  pg-data:

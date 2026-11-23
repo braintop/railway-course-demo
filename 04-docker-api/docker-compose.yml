@@ -1,0 +1,9 @@
+# הרצה מקומית:  docker compose up -d --build
+# בדיקה:        http://localhost:3000/api/tasks
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
