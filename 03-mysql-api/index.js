@@ -25,7 +25,8 @@ app.get('/', (req, res) => {
 
 app.get('/api/tasks', async (req, res) => {
   const [rows] = await pool.query('SELECT * FROM tasks ORDER BY id')
-  res.json(rows)
+  // ב-MySQL ה-BOOLEAN נשמר כ-0/1, אז ממירים ל-true/false
+  res.json(rows.map(r => ({ ...r, done: Boolean(r.done) })))
 })
 
 app.post('/api/tasks', async (req, res) => {
