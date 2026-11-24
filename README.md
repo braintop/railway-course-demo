@@ -10,3 +10,4 @@
 | `05-postgres-api` | tasks עם Postgres |
 | `06-mongo-api` | tasks עם MongoDB |
 | `07-client` | קליינט Vite + React שמדבר עם ה-API בענן |
+| `08-n8n` | n8n על Railway: Docker Image, Volume ו-Webhook שמוסיף משימה |
