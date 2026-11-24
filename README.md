@@ -9,4 +9,4 @@
 | `04-docker-api` | Dockerfile ו-docker compose |
 | `05-postgres-api` | tasks עם Postgres |
 | `06-mongo-api` | tasks עם MongoDB |
-| `07-client` | קליינט Vite |
+| `07-client` | קליינט Vite + React שמדבר עם ה-API בענן |
